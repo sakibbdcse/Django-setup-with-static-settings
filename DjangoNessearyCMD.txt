@@ -1,0 +1,55 @@
+ -------------------Django inportant Document---------------
+	1.. virtual Envirulment Setup.. --> open folder path and write location cmd.
+		then write command blue create a vitual environment...
+			CMD -->> python -m venv env >>>
+	2.... then Activate Envirulment...
+			CMD-->> env\Scripts\activate >>>> 
+	3.... then install Django ..........
+			CMD-->> pip install django >>>>
+	4.... then create jango project ....
+			CMD-->> django-admin startproject (project Name) . >>>> # dot meen rot diractory..
+	5... then create chack migrations...
+			CMD-->> python manage.py makemigrations
+	6... then migrate ...
+			CMD-->> py manage.py migrate >>
+	7... then create supper user ....
+			CMD--> py manage.py createsuperuser
+	8.... then run server 
+			CMD-->>python manage.py runserver >>>
+	9..... then create app ...
+			 CMD--> python manage.py startapp (app name) >>>
+	#### create app then Go to project setting and find INSTALLED_APPS ,[ ' (inisializ project name)'] ###### 
+	#### then click blank space and create new folder  "template"  and initialize Setting.py => TEMPLATES = [ 'DIRS': ['template'],]####
+	##### then create 2nd folder "static" ##### then go to settings copy and past this code below...
+					      In Settings.py : 
+
+					STATIC_URL = 'static/'
+					MEDIA_URL = 'media/'
+					STATICFILES_DIRS = [BASE_DIR / 'static', ]
+					MEDIA_ROOT = BASE_DIR / 'media'
+
+		
+	#### then go to project settings url.py and past code below .............
+					
+						in Project urls.py:
+
+					from django.conf import settings
+					from django.conf.urls.static import static
+
+					if settings.DEBUG:
+					    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+					    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+	
+	10..... then create url.py folder in project app .....
+				# then go to project url and copy path and past app 
+						<#  from django.urls import path #>
+						urlpatterns = [ ]
+				# then include project path 
+						<# from django.urls import path,include #>
+							urlpatterns = [
+    								path('admin/', admin.site.urls),
+								path('', include(('(app folder name.urls)')),
+								
+								]
+
+	
