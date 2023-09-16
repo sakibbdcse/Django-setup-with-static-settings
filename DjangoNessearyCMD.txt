@@ -21,24 +21,25 @@
 	#### create app then Go to project setting and find INSTALLED_APPS ,[ ' (inisializ project name)'] ###### 
 	#### then click blank space and create new folder  "template"  and initialize Setting.py => TEMPLATES = [ 'DIRS': ['template'],]####
 	##### then create 2nd folder "static" ##### then go to settings copy and past this code below...
-					      In Settings.py : 
 
-					STATIC_URL = 'static/'
-					MEDIA_URL = 'media/'
-					STATICFILES_DIRS = [BASE_DIR / 'static', ]
-					MEDIA_ROOT = BASE_DIR / 'media'
+In Settings.py : 
+
+STATIC_URL = 'static/'
+MEDIA_URL = 'media/'
+STATICFILES_DIRS = [BASE_DIR / 'static', ]
+MEDIA_ROOT = BASE_DIR / 'media'
 
 		
 	#### then go to project settings url.py and past code below .............
 					
-						in Project urls.py:
+in Project urls.py:
 
-					from django.conf import settings
-					from django.conf.urls.static import static
+from django.conf import settings
+from django.conf.urls.static import static
 
-					if settings.DEBUG:
-					    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-					    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 	
 	10..... then create url.py folder in project app .....
 				# then go to project url and copy path and past app 
