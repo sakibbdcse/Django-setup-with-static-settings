@@ -54,3 +54,4 @@ if settings.DEBUG:
 								]
 
 	
+pytho project github to run this command >> pip install -r requirements.txt
